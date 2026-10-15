@@ -1,6 +1,11 @@
 name: Sherpa Windows ARM64 runtime
 
 on:
+  push:
+    branches: [master]
+    paths:
+      - .github/workflows/cherry-win-arm64-runtime.yml
+      - scripts/cherry-runtime/**
   workflow_dispatch:
     inputs:
       publish:
@@ -20,7 +25,30 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
+  release-plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      publish: ${{ steps.plan.outputs.publish }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts/cherry-runtime
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24.20.0'
+      - name: Test release decisions
+        run: node --test scripts/cherry-runtime/release-plan.test.mjs
+      - name: Determine whether the runtime version changed
+        id: plan
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MANUAL_PUBLISH: ${{ inputs.publish }}
+        run: node scripts/cherry-runtime/release-plan.mjs
+
   build-and-test:
+    needs: release-plan
     runs-on: windows-11-arm
     timeout-minutes: 40
     outputs:
@@ -152,8 +180,8 @@ jobs:
           if-no-files-found: warn
 
   publish:
-    needs: build-and-test
-    if: github.event_name == 'workflow_dispatch' && inputs.publish && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && github.repository == 'CherryHQ/sherpa-onnx'
+    needs: [release-plan, build-and-test]
+    if: needs.release-plan.outputs.publish == 'true' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && github.repository == 'CherryHQ/sherpa-onnx'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -171,6 +199,14 @@ jobs:
           RUNTIME_ARCHIVE: ${{ needs.build-and-test.outputs.archive }}
           BUILD_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
+          set -euo pipefail
+          if gh api "repos/$REPO/git/ref/tags/$RELEASE_TAG" > existing-tag.json 2> tag-error.log; then
+            echo "Tag $RELEASE_TAG already exists; leaving it unchanged."
+            exit 0
+          elif ! grep -q 'HTTP 404' tag-error.log; then
+            cat tag-error.log >&2
+            exit 1
+          fi
           sha256sum --check "$RUNTIME_ARCHIVE.sha256"
           gh api --method POST "repos/$REPO/git/refs" -f "ref=refs/tags/$RELEASE_TAG" -f "sha=$BUILD_SHA"
           printf 'Windows ARM64 Sherpa runtime. Node and Electron utility-process ASR/TTS smoke tests passed.\n\nBuild: %s\n' "$BUILD_URL" > runtime-notes.md

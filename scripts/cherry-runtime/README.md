@@ -16,7 +16,9 @@ The `sherpa-win-arm64-runtime` artifact includes the runtime, dependency inspect
 
 ## Publish
 
-After reviewing a successful validation, dispatch from the default branch:
+Pushes to `master` that change this workflow or `scripts/cherry-runtime/**` automatically build and test. The workflow compares `runtime.json` with the commit before the entire push. A change to `version` or `runtimeRevision` automatically publishes after both inference checks pass. Other changes only validate. Pull requests never publish.
+
+To release a rebuild, increase `runtimeRevision` in a reviewed PR and merge it to `master`. Alternatively, dispatch from the default branch:
 
 ```sh
 gh workflow run cherry-win-arm64-runtime.yml --repo CherryHQ/sherpa-onnx --ref master -f publish=true
@@ -24,7 +26,7 @@ gh workflow run cherry-win-arm64-runtime.yml --repo CherryHQ/sherpa-onnx --ref m
 
 The workflow rebuilds and tests before publishing. It creates `sherpa-runtime-v<version>-r<runtimeRevision>` in this fork only. The release contains the runtime archive and SHA256 file. The archive contains the addon, SDK DLLs, license, and build provenance; smoke models and test audio are excluded. No npm publishing or Cherry Studio release is performed. Authentication uses this repository's `GITHUB_TOKEN`; no cross-repository token is needed.
 
-Tags are immutable: publication rejects an existing tag. Increase `runtimeRevision` for a rebuild. After a failed publication, inspect any tag or draft release before retrying. Do not replace files on a published tag.
+Tags are immutable: publication skips an existing tag without replacing assets. Increase `runtimeRevision` for a rebuild. After a failed publication, inspect any tag or draft release before retrying; an existing tag is deliberately not repaired automatically. Do not replace files on a published tag.
 
 ## Integrate with Cherry Studio
 
