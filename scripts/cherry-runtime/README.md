@@ -24,7 +24,7 @@ To release a rebuild, increase `runtimeRevision` in a reviewed PR and merge it t
 gh workflow run cherry-win-arm64-runtime.yml --repo CherryHQ/sherpa-onnx --ref master -f publish=true
 ```
 
-The workflow rebuilds and tests before publishing. It creates `sherpa-runtime-v<version>-r<runtimeRevision>` in this fork only. The release contains the runtime archive and SHA256 file. The archive contains the addon, SDK DLLs, license, and build provenance; smoke models and test audio are excluded. No npm publishing or Cherry Studio release is performed. Authentication uses this repository's `GITHUB_TOKEN`; no cross-repository token is needed.
+The workflow rebuilds and tests before publishing. It creates `sherpa-runtime-v<version>-r<runtimeRevision>` in this fork only. The release contains the runtime archive and SHA256 file. The archive contains the addon, SDK DLLs, license, and build provenance; smoke models and test audio are excluded. No npm publishing or Cherry Studio release is performed. Configure the repository secret `SHERPA_RELEASE_TOKEN` with a token limited to this repository and `Contents: write` plus `Workflows: write` permissions, including any required organization approval. Only the publication step uses this credential; build and planning jobs use `GITHUB_TOKEN`. The workflow never prints the credential.
 
 Tags are immutable: publication skips an existing tag without replacing assets. Increase `runtimeRevision` for a rebuild. After a failed publication, inspect any tag or draft release before retrying; an existing tag is deliberately not repaired automatically. Do not replace files on a published tag.
 

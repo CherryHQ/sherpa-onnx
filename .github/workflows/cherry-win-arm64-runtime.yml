@@ -187,12 +187,20 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Check release credential
+        env:
+          GH_TOKEN: ${{ secrets.SHERPA_RELEASE_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo '::error::SHERPA_RELEASE_TOKEN is not configured for this repository.'
+            exit 1
+          fi
       - uses: actions/download-artifact@v8
         with:
           name: sherpa-win-arm64-runtime
       - name: Publish a separately versioned runtime
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.SHERPA_RELEASE_TOKEN }}
           REPO: ${{ github.repository }}
           BUILD_SHA: ${{ github.sha }}
           RELEASE_TAG: ${{ needs.build-and-test.outputs.tag }}
