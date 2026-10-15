@@ -1,0 +1,252 @@
+[
+  {
+    "id": "kokoro-multi-lang-v1.1",
+    "files": [
+      {
+        "relPath": "date-zh.fst",
+        "sha256": "eb8aa079ae3cb81d8f4404992f39d61a0cb990947512b5b8d1e54d1f6980e718",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "date-zh.fst"
+        }
+      },
+      {
+        "relPath": "espeak-ng-data/en_dict",
+        "sha256": "71bd330ba8a2e3e8076e631508208ef49449d6147c17b7bd2b4b1e1468292e35",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "espeak-ng-data/en_dict"
+        }
+      },
+      {
+        "relPath": "espeak-ng-data/intonations",
+        "sha256": "3f8af65fd3eda9759a10f021d61361c120871f463515229c925995c7f90918cc",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "espeak-ng-data/intonations"
+        }
+      },
+      {
+        "relPath": "espeak-ng-data/lang/gmw/en",
+        "sha256": "4605d5330801de3641c6e366d15f129ea1f5ffbce8722642aba01ace07ab9c83",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "espeak-ng-data/lang/gmw/en"
+        }
+      },
+      {
+        "relPath": "espeak-ng-data/lang/gmw/en-US",
+        "sha256": "41534c2a22df5dd4f1052ff9e1a33a3ea7bff5a26b5c02bdad5ba8ddb7524704",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "espeak-ng-data/lang/gmw/en-US"
+        }
+      },
+      {
+        "relPath": "espeak-ng-data/phondata",
+        "sha256": "4e0288957874029a8c3c9f41a8f517ad4bf18127046decbdd4b9d1d6807ce3a3",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "espeak-ng-data/phondata"
+        }
+      },
+      {
+        "relPath": "espeak-ng-data/phondata-manifest",
+        "sha256": "7b387af0702c7cf0b61f0bead68feded0bd8e1620729b0b252e76acbc30d3813",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "espeak-ng-data/phondata-manifest"
+        }
+      },
+      {
+        "relPath": "espeak-ng-data/phonindex",
+        "sha256": "3ca7b8fa3b42624e4b0f152707e7a39245fce569aa99ea47c055d9e622fcf0c4",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "espeak-ng-data/phonindex"
+        }
+      },
+      {
+        "relPath": "espeak-ng-data/phontab",
+        "sha256": "886f3fa402cb0ba73d483aa8ad000af47a6b7cc06293c75a97913fba68a530f6",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "espeak-ng-data/phontab"
+        }
+      },
+      {
+        "relPath": "lexicon-us-en.txt",
+        "sha256": "7daaab53a181be9885b853a8582bf1838186317e5dadacbcef9c426d6fa0da14",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "lexicon-us-en.txt"
+        }
+      },
+      {
+        "relPath": "lexicon-zh.txt",
+        "sha256": "11111d8cd695fba2ace1367a1d0a708b586e6ef5c1f9be91da5d7eef129b651c",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "lexicon-zh.txt"
+        }
+      },
+      {
+        "relPath": "LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "LICENSE"
+        }
+      },
+      {
+        "relPath": "model.onnx",
+        "sha256": "acc4adc175b9d9986106cd20060329673ad5a2e12ef3c557d2d3745b694f8b38",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "model.onnx"
+        }
+      },
+      {
+        "relPath": "number-zh.fst",
+        "sha256": "743f402181fcfebf76cc2f0546b71fa26476e626fbe4e460fb7b4c3a7a8bd5bd",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "number-zh.fst"
+        }
+      },
+      {
+        "relPath": "phone-zh.fst",
+        "sha256": "1ac2b6fa56b1442320c4de7db08353bab8963a2b57f365eebcdd3a2d3562f8d7",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "phone-zh.fst"
+        }
+      },
+      {
+        "relPath": "tokens.txt",
+        "sha256": "931ab2df2400cd65d580a22402024c2347ced8ae9ea300e545144b1aacc48e14",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "tokens.txt"
+        }
+      },
+      {
+        "relPath": "voices.bin",
+        "sha256": "e64a5a581d8c2a350d848f51c3121657cd83aa07ed6109172177345874a7244c",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/kokoro-multi-lang-v1_1",
+          "revision": "914313412b607d95400bcd12446233fbd1248801",
+          "remoteFile": "voices.bin"
+        }
+      }
+    ]
+  },
+  {
+    "id": "funasr-nano-int8",
+    "files": [
+      {
+        "relPath": "encoder_adaptor.int8.onnx",
+        "sha256": "f36dea2e30fbc33b5db1d7a7265cc976c5e5586c77b042d5adb1ad27c72db422",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/sherpa-onnx-funasr-nano-int8-2025-12-30",
+          "revision": "6f16bd378457e13f36ccf3910df9017f96c346fb",
+          "remoteFile": "encoder_adaptor.int8.onnx"
+        }
+      },
+      {
+        "relPath": "llm.int8.onnx",
+        "sha256": "dfbf9aa3be41bccc257587f151e15c63fbe1b549f2b517f5ccd5bdce3bf4322a",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/sherpa-onnx-funasr-nano-int8-2025-12-30",
+          "revision": "6f16bd378457e13f36ccf3910df9017f96c346fb",
+          "remoteFile": "llm.int8.onnx"
+        }
+      },
+      {
+        "relPath": "embedding.int8.onnx",
+        "sha256": "95e61cd0c9c3b9543339a4cf973c95c116815e745ccc1e0285cbd81f76d18644",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/sherpa-onnx-funasr-nano-int8-2025-12-30",
+          "revision": "6f16bd378457e13f36ccf3910df9017f96c346fb",
+          "remoteFile": "embedding.int8.onnx"
+        }
+      },
+      {
+        "relPath": "Qwen3-0.6B/tokenizer.json",
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/sherpa-onnx-funasr-nano-int8-2025-12-30",
+          "revision": "6f16bd378457e13f36ccf3910df9017f96c346fb",
+          "remoteFile": "Qwen3-0.6B/tokenizer.json"
+        }
+      },
+      {
+        "relPath": "Qwen3-0.6B/vocab.json",
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/sherpa-onnx-funasr-nano-int8-2025-12-30",
+          "revision": "6f16bd378457e13f36ccf3910df9017f96c346fb",
+          "remoteFile": "Qwen3-0.6B/vocab.json"
+        }
+      },
+      {
+        "relPath": "Qwen3-0.6B/merges.txt",
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/sherpa-onnx-funasr-nano-int8-2025-12-30",
+          "revision": "6f16bd378457e13f36ccf3910df9017f96c346fb",
+          "remoteFile": "Qwen3-0.6B/merges.txt"
+        }
+      },
+      {
+        "relPath": "silero_vad.onnx",
+        "sha256": "a35ebf52fd3ce5f1469b2a36158dba761bc47b973ea3382b3186ca15b1f5af28",
+        "source": {
+          "source": "huggingface",
+          "repo": "csukuangfj/vad",
+          "revision": "fba88cd2e921609e7675c3aaf51e0b9b295da4bc",
+          "remoteFile": "silero_vad.onnx"
+        }
+      }
+    ]
+  }
+]
